@@ -1,0 +1,401 @@
+/* adminlogin.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout หลัก */
+.admin-login-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #60c7ff 0%, #0775c3 100%);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Back to User Login Button */
+.back-to-user {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+  z-index: 10;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50px;
+  padding: 14px 24px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ฝั่งซ้ายจ้ะ */
+.admin-welcome-circle {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 80px 80px 40px 80px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 170px;
+}
+
+
+.admin-icon svg {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(2px 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.admin-welcome-title {
+  font-size: 56px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  letter-spacing: 4px;
+  color: white;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-welcome-subtitle {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+  opacity: 0.95;
+  letter-spacing: 2px;
+  text-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-welcome-text {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.9;
+  max-width: 480px;
+  margin: 0;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
+  font-weight: 300;
+}
+
+
+
+/* เพิ่ม subtle animation สำหรับ text */
+.admin-welcome-title {
+  animation: fadeInUp 1s ease-out;
+}
+
+.admin-welcome-subtitle {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.admin-welcome-text {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* กล่องฟอร์ม Admin */
+.admin-login-form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 60px;
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.1);
+  margin-left: 250px;
+  position: relative;
+  z-index: 1;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-sign-in-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-left: -400px;
+  margin-top: -220px;
+  text-align: center;
+  position: relative;
+}
+
+.admin-sign-in-title::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65px;
+  height: 3px;
+  background: linear-gradient(135deg, #60c7ff 0%, #0775c3 100%);
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.admin-login-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.admin-login-input {
+  width: 500px;
+  padding: 18px 22px;
+  border: 2px solid #ecf0f1;
+  border-radius: 14px;
+  font-size: 16px;
+  background: #fafbfc;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.admin-login-input:focus {
+  outline: none;
+  border-color: #60c7ff;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(96, 199, 255, 0.12), 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.admin-login-input.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.12);
+  background: #fdf4f4;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 8px;
+  display: block;
+  font-weight: 500;
+}
+
+.admin-login-button {
+  width: 250px;
+  padding: 18px;
+  background: linear-gradient(135deg, #60c7ff 0%, #0775c3 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  box-shadow: 0 8px 25px rgba(96, 199, 255, 0.3);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-left: 130px;
+}
+
+.admin-login-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(96, 199, 255, 0.4);
+  background: linear-gradient(135deg, #4fc3f7 0%, #0277bd 100%);
+}
+
+.admin-login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .admin-welcome-circle {
+    padding: 50px 60px;
+  }
+  
+  .admin-login-form {
+    padding: 40px 45px;
+  }
+  
+  .admin-welcome-title {
+    font-size: 48px;
+    letter-spacing: 3px;
+  }
+  
+  .admin-welcome-subtitle {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+  
+  .admin-welcome-text {
+    font-size: 15px;
+  }
+  
+  .admin-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .admin-icon {
+    padding: 25px;
+  }
+  
+  .admin-sign-in-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-login-container {
+    flex-direction: column;
+  }
+  
+  .admin-welcome-circle {
+    flex: none;
+    height: 40vh;
+    padding: 30px 25px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .admin-welcome-circle::before,
+  .admin-welcome-circle::after {
+    display: none;
+  }
+  
+  .admin-login-form {
+    flex: 1;
+    padding: 35px 30px;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+  }
+  
+  .admin-sign-in-title {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+  
+  .admin-login-input {
+    width: 100%;
+  }
+  
+  .admin-login-button {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .admin-welcome-title {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+  
+  .admin-welcome-subtitle {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  
+  .admin-welcome-text {
+    font-size: 13px;
+    max-width: 100%;
+  }
+  
+  .admin-icon svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .admin-icon {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-user {
+    top: 15px;
+    left: 15px;
+  }
+  
+  .back-button {
+    padding: 8px 14px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  
+  .admin-welcome-circle {
+    padding: 25px 20px; 
+    height: 35vh;
+    margin-top: 100px !important;
+  }
+  
+  .admin-login-form {
+    padding: 25px 20px;
+  }
+  
+  .admin-welcome-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  
+  .admin-welcome-subtitle {
+    font-size: 14px;
+  }
+  
+  .admin-welcome-text {
+    font-size: 12px;
+  }
+  
+  .admin-icon svg {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .admin-icon {
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+}

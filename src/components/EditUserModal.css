@@ -1,0 +1,109 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* เพิ่มความเข้ม */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  margin-top: -50px!important; /* ปรับตำแหน่งให้สูงขึ้น */
+}
+
+.modal-container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px; /* เพิ่มความโค้งมน */
+  width: 450px; /* ขยายขนาด */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+  animation: fadeIn 0.3s ease; /* เพิ่ม animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-container h2 {
+  margin-top: 0;
+  font-size: 20px; /* ขยายขนาดตัวอักษร */
+  color: #4682b4; /* ใช้สีฟ้า */
+  text-align: center; /* จัดให้อยู่ตรงกลาง */
+}
+
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* เพิ่มช่องว่างระหว่างฟิลด์ */
+}
+
+.modal-container label {
+  font-size: 14px;
+  font-weight: 600; /* เพิ่มความหนา */
+  color: #333; /* ใช้สีเข้ม */
+}
+
+.modal-container input,
+.modal-container select {
+  width: 100%;
+  padding: 10px; /* เพิ่ม padding */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* เพิ่มความโค้งมน */
+  font-size: 14px; /* ขยายขนาดตัวอักษร */
+  background: #f9f9f9; /* เพิ่มสีพื้นหลัง */
+  transition: border-color 0.3s ease;
+}
+
+.modal-container input:focus,
+.modal-container select:focus {
+  border-color: #4682b4; /* ใช้สีฟ้าเมื่อ focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(70, 130, 180, 0.3); /* เพิ่มเงา */
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between; /* จัดปุ่มให้ห่างกัน */
+  gap: 15px;
+  margin-top: 25px; /* เพิ่มช่องว่างด้านบน */
+}
+
+.save-btn {
+  background: #4682b4;
+  color: white;
+  border: none;
+  padding: 10px 15px; /* เพิ่มขนาดปุ่ม */
+  border-radius: 6px; /* เพิ่มความโค้งมน */
+  cursor: pointer;
+  font-size: 14px; /* ขยายขนาดตัวอักษร */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn:hover {
+  background: #5a9bd4;
+  transform: translateY(-2px); /* เพิ่ม effect hover */
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: black;
+  border: none;
+  padding: 10px 15px; /* เพิ่มขนาดปุ่ม */
+  border-radius: 6px; /* เพิ่มความโค้งมน */
+  cursor: pointer;
+  font-size: 14px; /* ขยายขนาดตัวอักษร */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #bbb;
+  transform: translateY(-2px); /* เพิ่ม effect hover */
+}

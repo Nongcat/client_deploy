@@ -1,0 +1,415 @@
+.register-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #A5D3EB 0%, #61BDEE 50%, rgb(89, 169, 230) 100%);
+  background-size: 400% 400%;
+  animation: gradientWave 6s ease infinite;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* เพิ่มวงกลมพื้นหลัง */
+.register-bg-circle1 {
+  width: 700px;
+  height: 700px;
+  left: -200px;
+  top: -300px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 100% at 50% 70%, #60c7ff 0%, #0775c3 50%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatY 7s ease-in-out infinite;
+}
+
+.register-bg-circle2 {
+  width: 420px;
+  height: 420px;
+  right: 200px;
+  top: 280px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #ffffff 0%, #55a6d2 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatX 9s ease-in-out infinite;
+}
+
+.register-bg-circle3 {
+  width: 150px;
+  height: 150px;
+  left: 90px;
+  bottom: 200px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #fafdff 10%, #aee0ff 100%);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatY 6s ease-in-out infinite reverse;
+}
+
+.register-bg-circle4 {
+  width: 200px;
+  height: 200px;
+  right: 400px;
+  top: -50px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatX 8s ease-in-out infinite reverse;
+}
+
+.register-bg-circle5 {
+  width: 220px;
+  height: 220px;
+  right: 120px;
+  bottom: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatY 10s ease-in-out infinite;
+}
+
+/* Animation keyframes */
+@keyframes floatY {
+  0%   { transform: translateY(0) scale(1) rotate(0deg);}
+  50%  { transform: translateY(30px) scale(1.04) rotate(2deg);}
+  100% { transform: translateY(0) scale(1) rotate(0deg);}
+}
+
+@keyframes floatX {
+  0%   { transform: translateX(0) scale(1) rotate(0deg);}
+  50%  { transform: translateX(30px) scale(1.03) rotate(-2deg);}
+  100% { transform: translateX(0) scale(1) rotate(0deg);}
+}
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.register-card, .register-success-card {
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 95, 173, 0.314);
+  padding: 30px;
+  width: 100%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  margin-left: -300px; /* ลดจาก -350px */
+  margin-top: -150px; /* ลดจาก -200px */
+  z-index: 2;
+  border: none;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 20px; /* ลดจาก 25px */
+}
+
+.register-back-btn {
+  position: absolute;
+  top: 15px; /* ลดจาก 20px */
+  left: 15px; /* ลดจาก 20px */
+  background: none;
+  border: none;
+  font-size: 16px; /* ลดจาก 18px */
+  color: #2986cc;
+  cursor: pointer;
+  padding: 6px; /* ลดจาก 8px */
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.register-back-btn:hover {
+  background: rgba(97, 189, 238, 0.1);
+  transform: translateX(-2px);
+}
+
+.register-icon {
+  width: 60px; /* ลดจาก 70px */
+  height: 60px;
+  background: linear-gradient(135deg, #61bdee, #2986cc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px; /* ลดจาก 15px */
+  color: white;
+  font-size: 22px; /* ลดจาก 26px */
+}
+
+.register-header h2 {
+  margin: 0 0 6px; /* ลดจาก 8px */
+  color: #2986cc;
+  font-size: 22px; /* ลดจาก 26px */
+  font-weight: 600;
+}
+
+.register-header p {
+  margin: 0;
+  color: #666;
+  font-size: 13px; /* ลดจาก 14px */
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* ลดจาก 16px */
+}
+
+.register-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; /* ลดจาก 16px */
+}
+
+.register-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* ลดจาก 6px */
+}
+
+.register-input-group label {
+  font-weight: 500;
+  color: #333;
+  font-size: 13px; /* ลดจาก 14px */
+}
+
+.register-input-with-icon input {
+  width: 100%;
+  padding: 10px 12px 10px 40px; /* ลด padding */
+  border: 2px solid #e1e1e1;
+  border-radius: 8px; /* ลดจาก 10px */
+  font-size: 13px; /* ลดจาก 14px */
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.register-input-group input {
+  width: 100%;
+  padding: 10px 12px; /* ลด padding */
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.register-password-input input {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* ลด padding */
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.register-input-icon {
+  position: absolute;
+  left: 12px; /* ลดจาก 15px */
+  color: #2986cc;
+  font-size: 13px; /* ลดจาก 14px */
+  z-index: 1;
+}
+
+.register-toggle-btn {
+  position: absolute;
+  right: 10px; /* ลดจาก 12px */
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 13px; /* ลดจาก 14px */
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.register-toggle-btn:hover {
+  color: #2986cc;
+}
+
+.register-error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: -2px;
+}
+
+.register-submit-error {
+  background: #fdf2f2;
+  border: 1px solid #fbb6ba;
+  color: #e74c3c;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-submit-btn {
+  background: linear-gradient(135deg, #61bdee, #2986cc);
+  color: white;
+  border: none;
+  padding: 12px; /* ลดจาก 14px */
+  border-radius: 8px;
+  font-size: 15px; /* ลดจาก 16px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 6px; /* ลดจาก 8px */
+}
+
+.register-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(97, 189, 238, 0.4);
+}
+
+.register-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-login-link {
+  text-align: center;
+  margin-top: 12px; /* ลดจาก 16px */
+  padding-top: 12px; /* ลดจาก 16px */
+  border-top: 1px solid rgba(97, 189, 238, 0.2);
+}
+
+.register-login-link span {
+  color: #666;
+  font-size: 14px;
+}
+
+.register-login-btn {
+  background: none;
+  border: none;
+  color: #2986cc;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-left: 4px;
+}
+
+.register-login-btn:hover {
+  color: #61bdee;
+  text-decoration: underline;
+}
+
+/* Success Card */
+.register-success-card {
+  text-align: center;
+  max-width: 450px;
+}
+
+.register-success-icon {
+  width: 70px;
+  height: 70px;
+  background: #61bdee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 26px;
+}
+
+.register-success-card h2 {
+  color: #2986cc;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.register-success-card p {
+  color: #666;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .register-name-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .register-card {
+    padding: 20px;
+    max-width: 95vw;
+  }
+  
+  .register-header h2 {
+    font-size: 20px;
+  }
+  
+  .register-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 10px;
+  }
+  
+  .register-card {
+    padding: 16px;
+    max-height: 90vh;
+  }
+  
+  .register-form {
+    gap: 12px;
+  }
+}
+
+@media (max-height: 700px) {
+  .register-card {
+    max-height: 95vh;
+    padding: 20px;
+  }
+  
+  .register-form {
+    gap: 10px;
+  }
+  
+  .register-header {
+    margin-bottom: 15px;
+  }
+}

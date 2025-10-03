@@ -1,0 +1,664 @@
+.productplan-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #e0f2ff 0%, #61bdee 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 0;
+  position: relative;
+  transform: scale(0.9995);
+  transform-origin: top left;
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden; /* เพิ่มบรรทัดนี้เพื่อไม่ให้ scroll */
+}
+
+/* เพิ่ม CSS สำหรับ body เพื่อป้องกันการ scroll ทั้งหน้า */
+body {
+  overflow: hidden !important; /* ป้องกันการ scroll ทั้งหน้า */
+}
+
+/* หรือถ้าต้องการเฉพาะเมื่ออยู่ในหน้า productplan */
+.productplan-bg body {
+  overflow: hidden !important;
+}
+
+.productplan-header {
+  position: relative; /* เพิ่มเพื่อให้ลูก absolute ได้ */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 36px 60px 0 60px;
+}
+
+.productplan-title-bg {
+  position: absolute;
+  left: -60px;
+  top: -40px;
+  width: 1535px;
+  height: 100px;
+  background: #ffffff;
+  z-index: 0;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.10);
+}
+
+.productplan-title {
+  position: relative;
+  z-index: 1;
+  font-size: 38px;
+  top: -10px;
+  font-weight: 700;
+  margin-top: -7px;
+  color: #2986cc;
+  text-shadow: 1px 2px 6px rgba(41,134,204,0.13);
+}
+
+.productplan-user {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #2986cc;
+  font-weight: 500;
+  gap: 8px;
+  margin-top: 6px;
+  z-index: 1;
+}
+
+.icon-home {
+  font-size: 24px;
+  margin-right: 220px;
+  margin-top: -5px;
+  z-index: 1;
+}
+
+.productplan-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;      /* ให้ขึ้นบรรทัดใหม่ถ้าจอแคบ */
+  gap: 8px;             /* ลดช่องว่างแต่ละ input */
+  margin: 32px 0 0 60px;
+}
+
+.input-code {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-size: 18px;
+  background: none;
+  color: #2986cc;
+  width: 228px;
+  margin-right: 0;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.07);
+}
+.input-lot, .input-date {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-size: 18px;
+  background: #fafdff;
+  color: #2986cc;
+  width: 228px;
+  margin-right: 0;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.07);
+}
+.input-code {
+  width: 110px;
+  height: 36px;
+  font-size: 15px;
+  padding: 4px 8px;
+}
+
+.input-lot {
+  width: 60px;
+  height: 36px;
+  font-size: 15px;
+  padding: 4px 8px;
+}
+
+.icon-btn {
+  background: #61bdee;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  padding: 6px 12px;
+  margin-left: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn:hover {
+  background: #2986cc;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;   /* ขยับไปชิดขวา */
+  margin-right: 30px; /* ระยะห่างจากขอบขวา */
+  gap: 8px;
+}
+
+.productplan-content {
+  background: #eaf6ff;
+  border-radius: 32px;
+  margin-top: 30px;
+  margin-left: 60px;
+  padding: 24px 32px 80px 32px;
+  width: 1100px;      /* ปรับให้เล็กลง */
+  height: 400px;     /* ปรับให้เล็กลง */
+  box-shadow: 0 4px 24px rgba(41,134,204,0.10);
+  position: relative;
+}
+
+.productplan-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative; /* เพื่อให้ปุ่ม absolute อยู่ในนี้ */
+}
+
+.side-box {
+  width: 255px;
+  max-width: 360px;
+  background: #fafdff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px #b3e0ff33;
+  padding: 0 20px 18px 20px;
+  margin-left: 32px;
+  margin-right: 20px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.side-box-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #2986cc;
+  letter-spacing: 0.5px;
+  background: #fafdff;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 18px 0 12px 0;
+  border-radius: 18px 18px 0 0;
+}
+
+.side-box-scroll {
+  overflow-y: auto;
+  flex: 1 1 auto;
+  padding-right: 4px;
+  margin-top: 0;
+  max-height: 400px; /* ปรับตามต้องการ */
+}
+
+.productplan-info {
+  display: flex;
+  color: #2986cc;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.productplan-info span {
+  min-width: 170px;   /* กำหนดความกว้างคงที่ */
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.productplan-table-wrapper {
+  background: #fff;
+  border-radius: 18px;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.07);
+  margin-bottom: 16px;
+  overflow-y: auto;
+  overflow-x: auto;    /* เพิ่มบรรทัดนี้ */
+  max-height: 380px;
+  position: relative;
+}
+
+.productplan-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 15px;       /* หัวตารางเล็กลง */
+}
+
+.productplan-table th, .productplan-table td {
+  border: 1px solid #b3d8f7;
+  padding: 8px 4px;      /* เล็กลง */
+  text-align: center;
+  font-weight: 500;
+}
+
+.productplan-table th {
+  background: linear-gradient(90deg, #d0eaff 0%, #b3e0ff 100%);
+  color: #2986cc;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 4px 2px;    /* เดิม 8px 4px ลดเหลือ 4px 4px */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.07);
+  border-bottom: 2.5px solid #61bdee;
+  text-align: center !important; /* บังคับหัวตารางทุกคอลัมน์อยู่ตรงกลาง */
+}
+
+/* ถ้าต้องการให้เฉพาะหัวตารางตรงกลาง แต่ข้อมูลใน td ยังจัดซ้าย/ขวาได้ */
+.productplan-table th:nth-child(2) { text-align: center !important; }
+.productplan-table th:nth-child(3) { text-align: center !important; }
+
+.productplan-table td {
+  background: #fff;
+  color: #2986cc;
+  font-size: 14px;
+  padding: 8px 4px;
+}
+
+/* มุมตารางโค้ง */
+.productplan-table th:first-child {
+  border-top-left-radius: 14px;
+}
+.productplan-table th:last-child {
+  border-top-right-radius: 14px;
+}
+.productplan-table tr:last-child td:first-child {
+  border-bottom-left-radius: 14px;
+  border-left: none;           /* ลบเส้นขอบซ้าย */
+  border-bottom: none;         /* ลบเส้นขอบล่าง */
+}
+.productplan-table tr:last-child td:last-child {
+  border-bottom-right-radius: 14px;
+  border-right: none;          /* ลบเส้นขอบขวา */
+  border-bottom: none;         /* ลบเส้นขอบล่าง */
+}
+
+.submit-btn {
+  position: absolute;
+  right: 280px;
+  bottom: 24px;
+  background: #61bdee;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.13);
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #2986cc;
+}
+
+.productplan-submit-btn {
+  position: absolute;
+  right: 390px;   /* เดิม 340px ลดลงเพื่อขยับไปทางซ้าย */
+  bottom: 15px;
+  background: #0f72a7;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 40px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(41,134,204,0.13);
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.productplan-submit-btn:hover {
+  background: #2986cc;
+  transform: translateY(-2px) scale(1);
+}
+
+.productplan-submit-btn:disabled {
+  background: #b3d8f7;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.input-percent {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 10px;
+  font-size: 18px;
+  background: #fafdff;
+  color: #2986cc;
+  width: 60px;
+  height: 36px;
+  padding: 4px 8px;
+  margin-left: 0;
+  margin-right: 0;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.07);
+  text-align: right;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.input-code {
+  width: 110px;
+  height: 36px;
+  font-size: 15px;
+  padding: 4px 8px;
+}
+
+.input-dropdown {
+  border: none;
+  border-radius: 12px;
+  padding: 6px 10px;
+  font-size: 15px;
+  background: #fafdff;
+  color: #2986cc;
+  width: 100px;   /* ปรับขนาด dropdown */
+  margin-right: 0;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.07);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.input-label {
+  font-weight: 600;
+  color: #2986cc;
+  margin-right: 4px;
+  margin-left: 0;
+  font-size: 16px;
+}
+
+/* ปรับขนาดคอลัมน์ให้พอดีกับข้อมูลจริงมากขึ้น */
+
+.productplan-table th:nth-child(1),
+.productplan-table td:nth-child(1) { /* chemicalcode */
+  width: 70px;
+  min-width: 60px;
+  max-width: 80px;
+  text-align: center;
+}
+
+.productplan-table th:nth-child(2),
+.productplan-table td:nth-child(2) { /* name */
+  width: 90px;
+  min-width: 70px;
+  max-width: 110px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.productplan-table th:nth-child(3),
+.productplan-table td:nth-child(3) { /* chemical use */
+  width: 130px;
+  min-width: 110px;
+  max-width: 160px;
+  font-size: 15px;
+  text-align: right;
+}
+
+.productplan-table th:nth-child(4),
+.productplan-table td:nth-child(4), /* In */
+.productplan-table th:nth-child(5),
+.productplan-table td:nth-child(5), /* Out */
+.productplan-table th:nth-child(6),
+.productplan-table td:nth-child(6), /* balance */
+.productplan-table th:nth-child(7),
+.productplan-table td:nth-child(7)  /* diff */
+{
+  width: 90px;
+  min-width: 70px;
+  max-width: 110px;
+  text-align: right;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 18px;
+  margin-top: -150px;
+  padding: 36px 36px 28px 36px;
+  min-width: 340px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px #b3e0ff44;
+  text-align: center;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.modal-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2986cc;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.modal-content .confirm-list {
+  text-align: left;
+  margin-bottom: 22px;
+  font-size: 1.08rem;
+  color: #2986cc;
+  line-height: 2.1;
+}
+
+.modal-content .confirm-list b {
+  color: #00416f;
+  font-weight: 600;
+  font-size: 1.12rem;
+}
+
+.modal-content .modal-btns {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.modal-content .modal-btns button {
+  background: #61bdee;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-content .modal-btns button:last-child {
+  background: #eee;
+  color: #333;
+}
+
+.modal-content .modal-btns button:hover:not(:last-child) {
+  background: #2986cc;
+}
+
+.input-inout {
+  padding: 2px 6px;
+  border: 1px solid #b3e0ff;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* เพิ่มใน productplan.css */
+.noti-red {
+  color: #fff !important;
+  background: #d32f2f;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.noti-yellow {
+  color: #333 !important;
+  background: #f6ec83;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.noti-green {
+  background: #e6fbe6;
+  color: #207520;
+  border: 1px solid #7be07b;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.productplan-bottom-btn {
+  background: #32698e; /* เปลี่ยนสีปุ่ม */
+  color: #fff;
+  border: none;
+  margin-left: 130px;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.productplan-bottom-btn:hover {
+  background: #6797ae;
+}
+
+/* กล่องรวม prefix dropdown + product code input */
+.productplan-prefix-group {
+  display: flex;
+  align-items: center;
+  background: #fafdff;
+  border: 1.5px solid #61bdee;
+  border-radius: 12px;
+  padding: 0;
+  height: 38px;
+  min-width: 210px;
+  box-sizing: border-box;
+  margin-right: 8px;
+  overflow: hidden;
+  transition: border 0.2s, background 0.2s;
+}
+
+.productplan-prefix-group select {
+  border: none;
+  background: transparent;
+  color: #2986cc;
+  font-size: 1rem;
+  height: 38px;
+  padding: 0 14px 0 14px;
+  border-radius: 12px 0 0 12px;
+  outline: none;
+  min-width: 70px;
+  cursor: pointer;
+  appearance: none;
+  border-right: 1.5px solid #61bdee;
+  transition: background 0.2s;
+}
+
+.productplan-prefix-group input[type="text"] {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #2986cc;
+  height: 38px;
+  padding: 0 14px;
+  outline: none;
+  min-width: 90px;
+  flex: 1;
+  border-radius: 0 12px 12px 0;
+}
+
+.productplan-prefix-group:focus-within {
+  border-color: #2986cc;
+  background: #e3f2fd;
+}
+
+.productplan-prefix-group select:focus,
+.productplan-prefix-group input[type="text"]:focus {
+  background: #e3f2fd;
+}
+
+.productplan-prefix-group select:hover,
+.productplan-prefix-group input[type="text"]:hover {
+  background: #f0f7ff;
+}
+
+/* กล่อง input group ดีไซน์เดียวกับ prefix-group */
+.productplan-input-group {
+  display: flex;
+  align-items: center;
+  background: #fafdff;
+  border: 1.5px solid #61bdee;
+  border-radius: 12px;
+  padding: 0;
+  height: 38px;
+  min-width: 110px;
+  box-sizing: border-box;
+  margin-right: 8px;
+  overflow: hidden;
+  transition: border 0.2s, background 0.2s;
+}
+
+.productplan-input-group select,
+.productplan-input-group input[type="text"],
+.productplan-input-group input[type="number"],
+.productplan-input-group input[type="date"] {
+  border: none;
+  background: transparent;
+  color: #2986cc;
+  font-size: 1rem;
+  height: 38px;
+  padding: 0 14px;
+  outline: none;
+  min-width: 70px;
+  flex: 1;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.productplan-input-group input[type="date"] {
+  color-scheme: light;
+}
+
+.productplan-input-group:focus-within {
+  border-color: #2986cc;
+  background: #e3f2fd;
+}
+
+.productplan-input-group select:focus,
+.productplan-input-group input:focus {
+  background: #e3f2fd;
+}
+
+.productplan-input-group select:hover,
+.productplan-input-group input:hover {
+  background: #f0f7ff;
+}
+
+.productplan-input-group input::placeholder {
+  color: #b3d8f7;
+  opacity: 1;
+}
+
+.productplan-input-group.input-date-group {
+  margin-left: 24px;
+}

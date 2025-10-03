@@ -1,0 +1,417 @@
+/* login.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* วงกลม background หลายชั้น */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.bg-circle1 {
+  width: 700px;
+  height: 700px;
+  left: -200px;
+  top: -300px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 100% at 50% 70%, #60c7ff 0%, #0775c3 50%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-circle2 {
+  width: 420px;
+  height: 420px;
+  left: 1400px;
+  top: 60px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #ffffff 0%, #55a6d2 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-circle3 {
+  width: 90px;
+  height: 90px;
+  left: 40px;
+  bottom: 150px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #fafdff 10%, #aee0ff 100%);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-circle4 {
+  width: 100px;
+  height: 100px;
+  right: 400px;
+  top: -50px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-circle5 {
+  width: 220px;
+  height: 220px;
+  right: 120px;
+  bottom: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animation keyframes */
+@keyframes floatY {
+  0%   { transform: translateY(0) scale(1) rotate(0deg);}
+  50%  { transform: translateY(30px) scale(1.04) rotate(2deg);}
+  100% { transform: translateY(0) scale(1) rotate(0deg);}
+}
+@keyframes floatX {
+  0%   { transform: translateX(0) scale(1) rotate(0deg);}
+  50%  { transform: translateX(30px) scale(1.03) rotate(-2deg);}
+  100% { transform: translateX(0) scale(1) rotate(0deg);}
+}
+
+/* เพิ่ม animation ให้แต่ละวงกลม */
+.bg-circle1 { animation: floatY 7s ease-in-out infinite; }
+.bg-circle2 { animation: floatX 9s ease-in-out infinite; }
+.bg-circle3 { animation: floatY 6s ease-in-out infinite reverse; }
+.bg-circle4 { animation: floatX 8s ease-in-out infinite reverse; }
+.bg-circle5 { animation: floatY 10s ease-in-out infinite; }
+
+/* Layout หลัก */
+.login-container {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transform: scale(0.9995);
+  transform-origin: center center;
+}
+
+/* วงกลม welcome */
+.welcome-circle {
+  width: 500px;
+  height: 550px;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  border-radius: 50%;
+  box-shadow: 0 8px 40px 0 rgba(41, 134, 204, 0.10);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 2;
+  padding: 60px 60px 60px 120px; /* เดิม 80px */
+  margin-bottom: 200px;
+  position: relative;
+}
+
+.welcome-title {
+  font-size: 38px;
+
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-shadow: 2px 3px 8px rgba(41, 134, 204, 0.13);
+  letter-spacing: 1.5px;
+}
+
+.welcome-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-shadow: 1px 2px 4px rgba(41, 134, 204, 0.10);
+}
+
+.welcome-text {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #eaf6ff;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(41, 134, 204, 0.10);
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+/* กล่องฟอร์มขวา */
+.login-form {
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 95, 173, 0.314);
+  padding: 48px 36px 36px 36px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  margin-bottom: 5px;
+  transition: width 0.3s, padding 0.3s;
+  border: none;
+  align-items: stretch;
+  margin-left: -200px;
+  margin-bottom: 200px;
+  justify-content: flex-start;
+}
+
+.sign-in-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2986cc;
+  margin-bottom: 32px;   /* เพิ่มระยะห่างด้านล่าง */
+  margin-top: -10px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  width: 100%;
+}
+
+.login-label {
+  font-size: 20px;
+  color: #2986cc;
+  font-weight: 500;
+  margin-bottom: 10px;    /* กระชับ label กับ input */
+  margin-top: 20px;      /* ระยะห่าง label บน */
+  text-align: left;
+  width: 100%;
+}
+
+.login-label:first-of-type {
+  margin-top: 0;         /* ไม่ให้ label แรกมี margin-top */
+}
+
+.login-input {
+  font-size: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #cbe2f7;
+  outline: none;
+  color: #2986cc;
+  font-weight: 500;
+  margin-bottom: 10px;   /* กระชับ input ถัดไป */
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.login-input:focus {
+  background: #eaf6fb;
+  box-shadow: 0 0 0 2px #4ca1f1;
+}
+
+.login-button {
+  margin-top: 32px;      /* ระยะห่างจาก input สุดท้าย */
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #2986cc;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(41,134,204,0.13);
+  transition: all 0.3s;
+  width: 140px;
+  height: 45px;
+  align-self: center;
+}
+
+.login-button:hover {
+  background: #4ca1f1;
+  box-shadow: 0 4px 16px rgba(41,134,204,0.18);
+}
+
+/* สไตล์สำหรับปุ่มรีเซ็ตรหัสผ่าน */
+.forgot-password-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.forgot-password-button {
+  background: none;
+  border: none;
+  color: #2986cc;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+.forgot-password-button:hover {
+  color: #61bdee;
+  text-decoration: underline;
+}
+
+/* โลโก้ Admin ที่ root */
+.admin-logo-root {
+  position: absolute;
+  top: 690px;
+  left: 50px;
+  z-index: 10;
+}
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(41, 134, 204, 0.1);
+  transition: all 0.3s ease;
+}
+
+.admin-logo:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(41, 134, 204, 0.15);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(2px 4px 8px rgba(41, 134, 204, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.admin-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2986cc;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments for root logo */
+@media (max-width: 1100px) {
+  .admin-logo-root {
+    top: 15px;
+    left: 15px;
+  }
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .admin-text {
+    font-size: 14px;
+  }
+  .admin-logo {
+    padding: 6px 12px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-logo-root {
+    top: 10px;
+    left: 10px;
+  }
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .admin-text {
+    font-size: 12px;
+  }
+  .admin-logo {
+    padding: 5px 10px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-text {
+    display: none;
+  }
+  .admin-logo {
+    padding: 8px;
+    border-radius: 50%;
+  }
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+  .login-container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 0;
+  }
+  .welcome-circle {
+    width: 340px;
+    height: 340px;
+    padding: 32px 24px 32px 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-container {
+    padding: 8px 0;
+  }
+  .welcome-circle,
+  .login-form {
+    width: 98vw;
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .welcome-circle {
+    height: 180px;
+    font-size: 12px;
+    padding: 18px 2vw 18px 4vw;
+  }
+  .welcome-title {
+    font-size: 18px;
+  }
+  .sign-in-title {
+    font-size: 16px;
+  }
+  .login-form {
+    padding: 18px 6vw;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forgot-password-section {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+}

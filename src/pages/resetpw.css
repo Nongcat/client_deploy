@@ -1,0 +1,377 @@
+.resetpw-card, .resetpw-success-card {
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 95, 173, 0.314);
+  padding: 30px;
+  width: 400px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  overflow-y: auto;
+  margin-top: -200px; /* ลดจาก -250px */
+  margin-left: -380px;
+  z-index: 2;
+  border: none;
+}
+
+.resetpw-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #A5D3EB 0%, #61BDEE 50%, rgb(89, 169, 230) 100%);
+  background-size: 400% 400%;
+  animation: gradientWave 6s ease infinite;
+  padding: 20px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* เพิ่มวงกลมพื้นหลัง */
+.resetpw-bg-circle1 {
+  width: 700px;
+  height: 700px;
+  left: -200px;
+  top: -300px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 100% at 50% 70%, #60c7ff 0%, #0775c3 50%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatY 7s ease-in-out infinite;
+}
+
+.resetpw-bg-circle2 {
+  width: 420px;
+  height: 420px;
+  right: 200px;
+  top: 280px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #ffffff 0%, #55a6d2 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatX 9s ease-in-out infinite;
+}
+
+.resetpw-bg-circle3 {
+  width: 150px;
+  height: 150px;
+  left: 90px;
+  bottom: 200px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #fafdff 10%, #aee0ff 100%);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatY 6s ease-in-out infinite reverse;
+}
+
+.resetpw-bg-circle4 {
+  width: 200px;
+  height: 200px;
+  right: 400px;
+  top: -50px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatX 8s ease-in-out infinite reverse;
+}
+
+.resetpw-bg-circle5 {
+  width: 220px;
+  height: 220px;
+  right: 120px;
+  bottom: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A5D3EB 0%, #61BDEE 100%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatY 10s ease-in-out infinite;
+}
+
+/* Animation keyframes */
+@keyframes floatY {
+  0%   { transform: translateY(0) scale(1) rotate(0deg);}
+  50%  { transform: translateY(30px) scale(1.04) rotate(2deg);}
+  100% { transform: translateY(0) scale(1) rotate(0deg);}
+}
+
+@keyframes floatX {
+  0%   { transform: translateX(0) scale(1) rotate(0deg);}
+  50%  { transform: translateX(30px) scale(1.03) rotate(-2deg);}
+  100% { transform: translateX(0) scale(1) rotate(0deg);}
+}
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.resetpw-header {
+  text-align: center;
+  margin-bottom: 20px; /* ลดจาก 30px */
+}
+
+.resetpw-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #2986cc;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.resetpw-back-btn:hover {
+  background: rgba(97, 189, 238, 0.1);
+  transform: translateX(-2px);
+}
+
+.resetpw-icon {
+  width: 60px; /* ลดจาก 80px */
+  height: 60px;
+  background: linear-gradient(135deg, #61bdee, #2986cc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  color: white;
+  font-size: 24px; /* ลดจาก 30px */
+}
+
+.resetpw-header h2 {
+  margin: 0 0 8px;
+  color: #2986cc;
+  font-size: 24px; /* ลดจาก 28px */
+  font-weight: 600;
+}
+
+.resetpw-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px; /* ลดจาก 16px */
+}
+
+.resetpw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* ลดจาก 20px */
+}
+
+.resetpw-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* ลดจาก 8px */
+}
+
+.resetpw-password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.resetpw-password-input input {
+  width: 100%;
+  padding: 15px 50px 15px 15px;
+  border: 2px solid #e1e1e1;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.resetpw-password-input input:focus {
+  border-color: #61bdee;
+  box-shadow: 0 0 0 3px rgba(97, 189, 238, 0.1);
+}
+
+.resetpw-password-input input.error {
+  border-color: #e74c3c;
+}
+
+.resetpw-toggle-btn {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+.resetpw-toggle-btn:hover {
+  color: #2986cc;
+}
+
+.resetpw-error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+.resetpw-submit-error {
+  background: #fdf2f2;
+  border: 1px solid #fbb6ba;
+  color: #e74c3c;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.resetpw-submit-btn {
+  background: linear-gradient(135deg, #61bdee, #2986cc);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.resetpw-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(97, 189, 238, 0.4);
+}
+
+.resetpw-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Card */
+.resetpw-success-card {
+  text-align: center;
+}
+
+.resetpw-success-icon {
+  width: 80px;
+  height: 80px;
+  background: #61bdee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.resetpw-success-card h2 {
+  color: #2986cc;
+  margin-bottom: 15px;
+}
+
+.resetpw-success-card p {
+  color: #666;
+  margin: 10px 0;
+}
+
+/* เพิ่มใน resetpw.css */
+.resetpw-input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.resetpw-input-with-icon input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #e1e1e1;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.resetpw-input-icon {
+  position: absolute;
+  left: 18px;
+  color: #2986cc;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.resetpw-step-info {
+  background: rgba(97, 189, 238, 0.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(97, 189, 238, 0.3);
+}
+
+.resetpw-step-info p {
+  margin: 0;
+  color: #2986cc;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .resetpw-card, .resetpw-success-card {
+    padding: 20px;
+    width: 350px;
+  }
+  
+  .resetpw-header h2 {
+    font-size: 20px;
+  }
+  
+  .resetpw-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-height: 700px) {
+  .resetpw-card, .resetpw-success-card {
+    padding: 20px;
+    max-height: 85vh;
+  }
+  
+  .resetpw-form {
+    gap: 12px;
+  }
+  
+  .resetpw-header {
+    margin-bottom: 15px;
+  }
+}

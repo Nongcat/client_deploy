@@ -1,0 +1,262 @@
+/* เพิ่ม CSS สำหรับการขยายและป้องกัน scroll */
+body {
+  overflow: hidden !important; /* ป้องกันการ scroll ทั้งหน้า */
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  transform: scale(0.9975);
+  transform-origin: top left;
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* พื้นหลังซ้อน */
+.bg-blue-right {
+  position: absolute;
+  width: 450px;
+  height: 481px;
+  top: 40px;
+  left:800px;
+  background: #71ceff;
+  border-radius: 80px;
+}
+
+.bg-blue-left {
+  position: absolute;
+  width: 1000px;
+  height: 500px;
+  top: 114.75px;
+  left: 250px;
+  background: #71ceff;
+  border-radius: 80px;
+}
+
+.bg-white {
+  position: absolute;
+  width: 850px;
+  height: 201.99px;
+  top: 160px;
+  left: 330px;
+  background: white;
+  border-radius: 50px;
+}
+
+.bg-gradient {
+  position: absolute;
+  width: 1000px;
+  height: 500px;
+  top: 200px;
+  left: 250px;
+  background: linear-gradient(180deg, #b4e0f7 0%, #3a9bdc 100%);
+  border-radius: 80px;
+}
+
+/* หัวข้อ */
+.menu-title {
+  position: absolute;
+  top: 60.79px;
+  left: 800px;
+  width: 446px;
+  font-size: 48px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ผู้ใช้ */
+.user-section {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: 1000;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(240, 248, 255, 0.95); /* สีฟ้าอ่อน */
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(240, 248, 255, 0.3); /* สีฟ้าอ่อน */
+}
+
+.user-info:hover {
+  background: rgba(240, 248, 255, 1); /* สีฟ้าอ่อน */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%); /* สีฟ้า */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(135, 206, 235, 0.3); /* สีฟ้า */
+}
+
+.user-info:hover .user-avatar {
+  background: linear-gradient(135deg, #5dade2 0%, #3498db 100%); /* สีฟ้าเข้ม */
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.5); /* สีฟ้า */
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #4682b4; /* สีฟ้า */
+  font-size: 14px;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #4682b4; /* สีฟ้า */
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  overflow: hidden;
+  margin-top: 5px;
+  animation: dropdownSlide 0.3s ease;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #e3f2fd; /* สีฟ้าอ่อน */
+  color: #4682b4; /* สีฟ้า */
+}
+
+.dropdown-item.logout:hover {
+  background-color: #fee; /* สีแดงอ่อน */
+  color: #dc3545; /* สีแดง */
+}
+
+.dropdown-icon {
+  font-size: 14px;
+  width: 16px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 5px 0;
+}
+
+/* ปรับตำแหน่ง user-name เดิม */
+.user-name.original {
+  display: none; /* ซ่อน user-name เดิม */
+}
+
+/* เมนูไอเทม */
+.menu-items {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  position: absolute;
+  top: 350px;
+  left: 740px;
+  transform: translateX(-50%);
+  width: 900px;
+  z-index: 2;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 220px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover .menu-icon-bg {
+  box-shadow: 0 8px 24px rgba(41,134,204,0.18), 0 2px 12px rgba(41,134,204,0.10);
+  transform: translateY(-8px) scale(1.04);
+  background: linear-gradient(180deg, #aee6ff 0%, #61bdee 100%);
+}
+
+.menu-icon-bg {
+  width: 170px;
+  height: 170px;
+  background: linear-gradient(120deg, #8cd3f7 60%, #61bdee 100%);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px 0 rgba(41,134,204,0.13), 0 2px 12px rgba(41,134,204,0.10);
+  transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+}
+
+.menu-icon {
+  width: 90px;
+  height: 90px;
+  color: #ffffff;
+  object-fit: contain;
+}
+
+.menu-icon-bg:hover .menu-icon {
+  transform: scale(1.1);
+  color: #3a96e7;
+  transition: transform 0.2s;
+}
+
+.menu-item .label {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
+}
